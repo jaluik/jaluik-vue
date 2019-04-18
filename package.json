@@ -1,0 +1,26 @@
+{
+  "name": "vue-learn",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaluik/jaluik-vue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaluik/jaluik-vue/issues"
+  },
+  "homepage": "https://github.com/jaluik/jaluik-vue#readme",
+  "devDependencies": {
+    "vue": "^2.6.10",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
+  }
+}

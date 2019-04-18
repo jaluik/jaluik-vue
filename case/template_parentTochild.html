@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <parent :imgtitle = "title" :imgsrc = "img"></parent>
+    </div>
+
+    <template id = "my_img">
+        <img :src="imgsrc" alt="">       
+    </template>
+
+    <template id = "my_title">
+        <h2>{{title}}</h2>
+    </template>
+
+    <template id = "my_div">
+        <div>
+            <child1 :imgsrc = "imgsrc"></child1>
+            <child2 :title = "imgtitle"></child2>
+        </div>
+    </template>
+    
+
+
+    <script src="./index.js"></script>
+</body>
+</html>

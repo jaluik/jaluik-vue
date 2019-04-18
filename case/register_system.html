@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生录入系统</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 第一部分 -->
+        <fieldset>
+            <legend>学生录入系统</legend>
+            <div>
+                <span>姓名：</span>
+                <input type="text" placeholder = "请输入用户名" v-model = "newPerson.name">
+            </div>
+            <div>
+                <span>年龄：</span>
+                <input type="text" placeholder = ""  v-model = "newPerson.age">
+            </div>
+            <div>
+                <span>性别：</span>
+                <select name="sex" id=""  v-model = "newPerson.sex">
+                    <option value="male">男</option>
+                    <option value="female">女</option>
+                </select>
+            </div>
+            <div>
+                <span>手机：</span>
+                <input type="text" placeholder = "请输入手机号"  v-model = "newPerson.phone">
+            </div>
+            <button @click = "creatPersons()">录入学生信息</button>
+        </fieldset>
+        <!-- 第二部分 -->
+        <table>
+            <thead>
+                <tr>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>年龄</td>
+                    <td>手机</td>
+                    <td>删除</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for = "(person,index) in persons">
+                    <td>{{person.name}}</td>
+                    <td>{{person.sex}}</td>
+                    <td>{{person.age}}</td>
+                    <td>{{person.phone}}</td>
+                    <td>
+                        <button @click = "deletePersons(index)">删除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data:{
+                persons: [
+                    {name:"张三", age: 18, sex: "male", phone: 18580003232},
+                    {name:"李四", age: 12, sex: "male", phone: 18580003622} ,
+                    {name:"王五", age: 55, sex: "female", phone: 18580002842},
+                    {name:"赵六", age: 23, sex: "male", phone: 18580008703}                
+                ],
+                newPerson: {name:"", age:"" , sex: "male", phone:""},
+            },
+            methods:{
+                creatPersons(){
+                    // 判断准入标准
+                    if(this.newPerson.name === ""){
+                        alert('请输入名字')
+                        return
+                    }
+                    if(this.newPerson.age <= 0){
+                        alert('年龄输入有误')
+                        return
+                    }
+                    if(this.newPerson.phone === ""){
+                        alert('请输入手机号');
+                        return
+                    }
+                    this.persons.unshift(this.newPerson),
+                    this.newPerson = {name:"", age:"" , sex: "male", phone:""}
+                },
+                deletePersons(index){
+                    this.persons.splice(index, 1)
+                }
+            }
+        })
+    
+    </script>
+</body>
+</html>

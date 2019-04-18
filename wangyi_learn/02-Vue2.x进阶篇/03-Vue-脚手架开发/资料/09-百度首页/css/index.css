@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+  color: black;
+}
+
+body{
+    /*统一设置字体*/
+    font-size: 13px;
+}
+
+/*头部*/
+#header{
+    /*background-color: red;*/
+
+    /*设置外边距*/
+    margin:15px 0;
+
+    /*设置子标签右对齐*/
+    text-align: right;
+
+    font-size: 15px;
+}
+
+#header a{
+   margin-right: 8px;
+   /*设置文字的样式*/
+   font-weight: bolder;
+}
+
+#header a.no-weight{
+    /*设置文字的样式*/
+    font-weight: normal;
+}
+
+#header a.more-product{
+    background-color: #3385ff;
+    color: white;
+    /*去除下划线*/
+    text-decoration: none;
+    /*设置内边距*/
+    padding: 5px;
+}
+
+/*中间*/
+#main{
+    /*background-color: greenyellow;*/
+}
+
+#main .main-top{
+    text-align: center;
+}
+
+#main .main-top img{
+    width: 270px;
+    height: 129px;
+}
+
+#main .main-middle{
+    width: 600px;
+    /*块级标签居中*/
+    margin: 20px auto;
+}
+
+#main .main-middle input{
+    width: 500px;
+    height: 38px;
+
+    /*计算模式*/
+    box-sizing: border-box;
+
+    /*设置边框*/
+    border: 1px solid #dddddd;
+
+    /*浮动*/
+    float: left;
+
+    /*设置内边距*/
+    padding-left: 8px;
+}
+
+#main .main-middle a{
+    background-color: #3385ff;
+    width: 100px;
+    height: 38px;
+
+    /*改变标签的类型: 行内 --> 行内-块级 */
+    display: inline-block;
+
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+
+    /*水平居中 垂直居中*/
+    text-align: center;
+    line-height: 38px;
+}
+
+/*伪类*/
+#main .main-middle input:focus{
+    /*去除外边线*/
+    outline:none;
+    border-color: #3385ff;
+}
+
+#main .main-footer-img{
+    /*background-color: red;*/
+    width: 50%;
+
+    /*居中*/
+    margin:0 auto;
+
+    /*里面的内容居中*/
+    text-align: center;
+}
+
+#main .main-footer-img img{
+    width: 130px;
+    height: 120px;
+
+    /*图片之间的间距*/
+    margin: 5px;
+}
+
+#main .main-footer-img img:hover{
+    box-shadow: 1px 1px #e8e8e8;
+    /*设置不透明度*/
+    opacity: 0.5;
+}
+
+#main .search-panel{
+    list-style: none;
+    border: 1px solid #e8e8e8;
+    border-top:none;
+    color: deepskyblue;
+    font-size: 16px;
+    display: none;
+}
+
+#main .search-panel li{
+    line-height: 25px;
+    padding-left: 5px;
+}
+
+/*尾部*/
+#footer{
+    /*background-color: orange;*/
+    /*相对浏览器进行定位*/
+    position: fixed;
+    left: 0;
+    bottom: 40px;
+
+    width: 100%;
+
+    text-align: center;
+
+    /*内边距*/
+    padding: 15px 0;
+
+    font-size: 14px;
+
+}
+
+#footer .footer-top{
+    margin-bottom: 8px;
+}
+
+#footer a{
+    margin:0 5px;
+}
